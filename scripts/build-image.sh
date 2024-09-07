@@ -8,4 +8,4 @@ docker build --no-cache -t $CONTAINER_REGISTRY/catalog:$VERSION .
 
 cd ./inventory_management
 
-docker build -t $CONTAINER_REGISTRY/inventory:$VERSION .
+docker build --no-cache -t $CONTAINER_REGISTRY/inventory:$VERSION .
