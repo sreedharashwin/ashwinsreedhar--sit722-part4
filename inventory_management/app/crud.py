@@ -1,6 +1,7 @@
 from sqlalchemy.orm import Session
-from . import models, schemas
-
+import crud
+import models
+import schemas
 def get_inventory(db: Session, inventory_id: int):
     return db.query(models.Inventory).filter(models.Inventory.id == inventory_id).first()
 
