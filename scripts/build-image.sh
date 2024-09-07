@@ -7,4 +7,6 @@ cd ./book_catalog
 
 docker build --no-cache -t $CONTAINER_REGISTRY/catalog:$VERSION .
 
-#docker build -t $CONTAINER_REGISTRY/inventory:$VERSION --file ./inventory_management/Dockerfile .
+cd ./inventory_management
+
+docker build -t $CONTAINER_REGISTRY/inventory:$VERSION .
