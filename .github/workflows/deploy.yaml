@@ -19,9 +19,15 @@ jobs:
     steps:
       
       - uses: actions/checkout@v3
+
+      - name: Setting permissions for build script
+        run: chmod +x ./scripts/build-image.sh
       
       - name: Build
         run: ./scripts/build-image.sh
+
+      - name: Setting permissions for push script
+        run: chmod +x ./scripts/push-image.sh
 
       - name: Publish
         run: ./scripts/push-image.sh
@@ -31,6 +37,9 @@ jobs:
         with:
           base64-kube-config: ${{ secrets.KUBE_CONFIG }}
           kubectl-version: v1.24.2
+
+      - name: Setting permissions for deploy script
+        run: chmod +x ./scripts/deploy.sh
       
       - name: Deploy
         run: ./scripts/deploy.sh
